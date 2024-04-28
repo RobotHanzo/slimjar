@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'me.lucko:jar-relocator:1.5'
+    testImplementation 'me.lucko:jar-relocator:1.7'
     testImplementation 'com.google.code.gson:gson:2.9.0'
     testImplementation group: 'junit', name: 'junit', version: '4.13.2'
     testImplementation group: 'org.mockito', name: 'mockito-core', version: '2.28.2'
@@ -59,23 +59,6 @@ publishing {
                 }
             }
 
-        }
-    }
-    repositories {
-        maven {
-            if (project.version.endsWith('-SNAPSHOT')) {
-                url "https://repo.vshnv.tech/snapshots/"
-            } else {
-                url "https://repo.vshnv.tech/releases/"
-            }
-
-            credentials {
-                username = project.findProperty("reposiliteAlias") ?: ""
-                password = project.findProperty("reposiliteToken") ?: ""
-            }
-            authentication {
-                basic(BasicAuthentication)
-            }
         }
     }
 }
