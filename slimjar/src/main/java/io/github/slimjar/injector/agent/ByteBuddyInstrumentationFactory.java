@@ -127,7 +127,7 @@ public final class ByteBuddyInstrumentationFactory implements InstrumentationFac
                 null,
                 Collections.emptyList()
         );
-        final Repository centralRepository = new Repository(new URL(SimpleMirrorSelector.CENTRAL_URL));
+        final Repository centralRepository = new Repository(new URL("https://repo1.maven.org/maven2/"));
         return new DependencyData(
                 Collections.emptySet(),
                 Collections.singleton(centralRepository),
